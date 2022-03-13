@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="messageDiv" style="height: 30px;"></div>
+    <button type="button" onclick="showMessage();">Click Me!</button>
+    <button type="button" id="button1">Click Me!</button>
+    <script>
+        function showMessage() {
+            document.getElementById("messageDiv").innerHTML = "Hello World!";
+        }
+
+        document.getElementById("button1").addEventListener("click", anotherShowMessage);
+        function anotherShowMessage() {
+            document.getElementById("messageDiv").innerHTML = "Hello World by EventListener!";
+        }
+    </script>
+</body>
+</html>
