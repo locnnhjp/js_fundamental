@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Input a number: </p>
+    <input type="number" id="input_number">
+    <button type="button" onclick="checkOddOrEven();">Check</button>
+    <script>
+        function checkOddOrEven() {
+            let inputValue = parseInt(document.getElementById("input_number").value);
+            if (inputValue % 2 === 0) {
+                alert(inputValue + " là một số chẵn");
+            } else {
+                alert(inputValue + " là một số lẻ");
+            }
+        }
+    </script>
+</body>
+</html>
