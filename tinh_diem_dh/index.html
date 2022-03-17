@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+
+    <body>
+        <h1>TÍNH ĐIỂM ĐẠI HỌC KHỐI D</h1>
+        <form action="#" method="get">
+            <table>
+                <tr>
+                    <td>Môn Toán</td>
+                    <td><input type="number" id="math_score" /></td>
+                </tr>
+                <tr>
+                    <td>Môn Văn</td>
+                    <td><input type="number" id="literature_score" /></td>
+                </tr>
+                <tr>
+                    <td>Môn Anh</td>
+                    <td><input type="number" id="english_score" /></td>
+                </tr>
+                <tr>
+                    <td>Khu vực</td>
+                    <td>
+                        <select name="area" id="area">
+                            <option value="KV1">KV1</option>
+                            <option value="KV2">KV2</option>
+                            <option value="KV2-NT">KV2-NT</option>
+                            <option value="KV3">KV3</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" onclick="showTotalScore();">
+                            Tính điểm
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <h2 style="color: red" id="result"></h2>
+
+        <script>
+            function showTotalScore() {
+                let mathScore = parseInt(document.getElementById("math_score").value);
+                let literatureScore = parseInt(document.getElementById("literature_score").value);
+                let engScore = parseInt(document.getElementById("english_score").value);
+                let area = document.getElementById("area").value;
+                let addScore = getAddScore(area);
+                let total = mathScore + literatureScore + engScore + addScore;
+                document.getElementById("result").innerText = "Tổng điểm ĐH khối D của bạn là: " + total;
+            }
+
+            function getAddScore(area) {
+                let addScore = 0;
+                switch (area) {
+                    case "KV1":
+                        addScore = 0.75;
+                        break;
+                    case "KV2": 
+                        addScore = 0.25;
+                        break;
+                    case "KV2-NT":
+                        addScore = 0.5;
+                        break;
+                    default:
+                        break;
+                }
+                return addScore;
+            }
+        </script>
+    </body>
+</html>
