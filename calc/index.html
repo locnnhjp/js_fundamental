@@ -9,32 +9,32 @@
 </head>
 <body>
     <div class="container">
-        <div class="display">
+        <div class="display" id="display_area">
         </div>
         <table>
             <tr>
-                <td><button type="button" class="btn">1</button></td>
-                <td><button type="button" class="btn">2</button></td>
-                <td><button type="button" class="btn">3</button></td>
-                <td><button type="button" class="btn" id="btn-plus">+</button></td>
+                <td><button type="button" class="btn" onclick="pressButton('1');">1</button></td>
+                <td><button type="button" class="btn" onclick="pressButton('2');">2</button></td>
+                <td><button type="button" class="btn" onclick="pressButton('3');">3</button></td>
+                <td><button type="button" class="btn" onclick="pressButton('+');">+</button></td>
             </tr>
             <tr>
-                <td><button type="button" class="btn">4</button></td>
-                <td><button type="button" class="btn">5</button></td>
-                <td><button type="button" class="btn">6</button></td>
-                <td><button type="button" class="btn">-</button></td>
+                <td><button type="button" class="btn" onclick="pressButton('4');">4</button></td>
+                <td><button type="button" class="btn" onclick="pressButton('5');">5</button></td>
+                <td><button type="button" class="btn" onclick="pressButton('6');">6</button></td>
+                <td><button type="button" class="btn" onclick="pressButton('-');">-</button></td>
             </tr>
             <tr>
-                <td><button type="button" class="btn">7</button></td>
-                <td><button type="button" class="btn">8</button></td>
-                <td><button type="button" class="btn">9</button></td>
-                <td><button type="button" class="btn">x</button></td>
+                <td><button type="button" class="btn" onclick="pressButton('7');">7</button></td>
+                <td><button type="button" class="btn" onclick="pressButton('8');">8</button></td>
+                <td><button type="button" class="btn" onclick="pressButton('9');">9</button></td>
+                <td><button type="button" class="btn" onclick="pressButton('x');">x</button></td>
             </tr>
             <tr>
-                <td><button type="button" class="btn">C</button></td>
-                <td><button type="button" class="btn">0</button></td>
-                <td><button type="button" class="btn">=</button></td>
-                <td><button type="button" class="btn">/</button></td>
+                <td><button type="button" class="btn" onclick="pressButton('c');">C</button></td>
+                <td><button type="button" class="btn" onclick="pressButton('0');">0</button></td>
+                <td><button type="button" class="btn" onclick="pressButton('=');">=</button></td>
+                <td><button type="button" class="btn" onclick="pressButton('/');">/</button></td>
             </tr>
         </table>
     </div>
