@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        table, td {
+            border: 1px solid black;
+        }
+        td {
+            width: 100px;
+        }
+    </style>
+    <div id="result"></div>
+    <script>
+        let result = "<table>";
+        for (let i = 1; i <= 9; i++) {
+            result += "<tr>";
+            for (let j = 2; j <= 9; j++) {
+                result += "<td>" + j + "x" + i + "=" + (i*j) + "</td>";
+            }
+            result += "</tr>";
+        }
+        result += "</table>"
+        document.getElementById("result").innerHTML = result;
+    </script>
+</body>
+</html>
