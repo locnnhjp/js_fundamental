@@ -67,10 +67,9 @@
             </table>
         </form>
         <p id="result"></p>
-
         <script>
             function convert() {
-                let convertedAmout;
+                let convertedAmount;
                 let inputAmount = parseInt(document.getElementById("amount").value);
                 const USD_VND_RATE = 24000;
                 if (isNaN(inputAmount)) {
@@ -83,16 +82,15 @@
                         .getElementById("to_currency")
                         .value.toLowerCase();
                     if (from_currency == to_currency) {
-                        convertedAmout = inputAmount;
+                        convertedAmount = inputAmount;
                     } else if (from_currency == "vnd" && to_currency == "usd") {
-                        convertedAmout = inputAmount / USD_VND_RATE;
+                        convertedAmount = inputAmount / USD_VND_RATE;
                     } else {
-                        convertedAmout = inputAmount * USD_VND_RATE;
+                        convertedAmount = inputAmount * USD_VND_RATE;
                     }
-                    document.getElementById("result").innerText = "Result: " + convertedAmout + " " + to_currency.toUpperCase();
+                    document.getElementById("result").innerText = "Result: " + convertedAmount + " " + to_currency.toUpperCase();
                 }
             }
-            
         </script>
     </body>
 </html>
