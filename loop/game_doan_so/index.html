@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <style>
+            button {
+                padding: 5px 30px;
+                font-size: 30px;
+                display: block;
+                margin: 100px auto;
+            }
+        </style>
+        <div class="container">
+            <button type="button" onclick="startGame()">Play</button>
+        </div>
+        <script>
+            function startGame() {
+                let maxNum = prompt(
+                    "Nhập số lớn nhất trong khoảng bạn muốn đoán"
+                );
+                let targetNumber = Math.floor(Math.random() * maxNum + 1);
+                console.log("TargetNumber = " + targetNumber);
+                let guessNumber = 0;
+                do {
+                    guessNumber = prompt("Nhập số bạn muốn đoán");
+                    if (guessNumber != targetNumber) {
+                        alert("Rất tiếc bạn đã đoán sai, vui lòng đoán lại!")
+                    }
+                } while (guessNumber != targetNumber);
+                alert("Chúc mừng bạn đã đoán đúng!");
+            }
+        </script>
+    </body>
+</html>
