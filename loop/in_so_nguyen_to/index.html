@@ -8,6 +8,16 @@
 </head>
 <body>
     <script>
+        let numbers = prompt("Nhập số lượng số nguyên tố cần in ra");
+        let count = 0;
+        let N = 2;
+        while (count < numbers) {
+            if (isPrimeNumber(N)) {
+                document.write(N + "<br>");
+                count++;
+            }
+            N++;
+        }
         function isPrimeNumber(number) {
             let result = true;
             for (let i = 2; i <= (number / 2); i++) {
