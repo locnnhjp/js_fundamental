@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let currentNum = 1;
+        let prevNum = 1;
+        while (true) {
+            let temp = currentNum;
+            currentNum = prevNum + currentNum;
+            prevNum = temp
+            if (currentNum % 5 == 0) {
+                document.write("Số fibonacci đầu tiên chia hết cho 5 là " + currentNum);
+                break;
+            }
+        }
+    </script>
+</body>
+
+</html>

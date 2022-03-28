@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let count = 2;
+        let currentNum = 1;
+        let prevNum = 1
+        // In ra 2 số fibonacci đầu tiên
+        document.write(prevNum + "<br>");
+        document.write(currentNum + "<br>");
+        // dùng vòng lặp để in 18 số còn lại
+        while (count < 20) {
+            let temp = currentNum;
+            currentNum = prevNum + currentNum;
+            prevNum = temp
+            document.write(currentNum + "<br>");
+            count++;
+        }
+    </script>
+</body>
+</html>
