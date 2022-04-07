@@ -26,13 +26,21 @@
                 let targetNumber = Math.floor(Math.random() * maxNum + 1);
                 console.log("TargetNumber = " + targetNumber);
                 let guessNumber = 0;
+                let count = 0;
                 do {
                     guessNumber = prompt("Nhập số bạn muốn đoán");
+                    count++;
                     if (guessNumber != targetNumber) {
                         alert("Rất tiếc bạn đã đoán sai, vui lòng đoán lại!")
                     }
+                    if (count >= 3) {
+                        alert("Bạn đã hết lượt");
+                        break;
+                    }
                 } while (guessNumber != targetNumber);
-                alert("Chúc mừng bạn đã đoán đúng!");
+                if (count < 3) {
+                    alert("Chúc mừng bạn đã đoán đúng!");
+                }
             }
         </script>
     </body>

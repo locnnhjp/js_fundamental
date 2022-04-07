@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button id="button1">Tab1</button>
+        <button id="button2">Tab2</button>
+        <button id="button3">Tab3</button>
+    </div>
+    <div id="display-area"></div>
+    <script>
+        let btn1 = document.getElementById("button1");
+        let btn2 = document.getElementById("button2");
+        let btn3 = document.getElementById("button3");
+        let displayArea = document.getElementById("display-area");
+        btn1.addEventListener("click", () => {
+            displayArea.innerText = "Tab1";
+        })
+
+        btn2.addEventListener("click", () => {
+            displayArea.innerText = "Tab2";
+        })
+
+        btn3.addEventListener("click", () => {
+            displayArea.innerText = "Tab3";
+        })
+    </script>
+</body>
+</html>

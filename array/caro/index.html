@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="display-area"></div>
+    <button onclick="changeValue();">Change Value</button>
+    <script>
+        let caro = [];
+        for (let i = 0; i < 5; i++) {
+            let subArr = [];
+            for (let j = 0; j < 5; j++) {
+                subArr.push("0");
+            }
+            caro.push(subArr);
+        }
+        display(caro);
+        
+        function changeValue() {
+            let i = parseInt(prompt("Nhap vao gia tri index1"));
+            let j = parseInt(prompt("Nhap vao gia tri index2"));
+            let value = prompt("Nhap vao gia tri muon thay doi");
+            caro[i][j] = value;
+            display(caro);
+        }
+
+        function display(arr) {
+            let displayContent = "";
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < arr[i].length; j++) {
+                    displayContent += arr[i][j] + " ";
+                }
+                displayContent += "<br>";
+            }
+            document.getElementById("display-area").innerHTML = displayContent;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="item">
+    <button onclick="addItem();">Add</button>
+    <button onclick="displayItem();">Display</button>
+    <hr>
+    <div id="display-area"></div>
+    <script>
+        let itemList = [];
+        function addItem() {
+            let item = document.getElementById("item").value;
+            itemList.push(item);
+            console.log(itemList.toString());
+        }
+
+        function displayItem() {
+            let displayContent = "";
+            for (let i = 0; i < itemList.length; i++) {
+                displayContent += "<p>Item " + i + ": " + itemList[i] + "</p>";
+            }
+            document.getElementById("display-area").innerHTML = displayContent;
+        }
+    </script>
+</body>
+</html>

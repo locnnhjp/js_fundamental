@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        button {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <button id="btn00" onclick="input(0,0);"></button>
+                </td>
+                <td>
+                    <button id="btn01" onclick="input(0,1);"></button>
+                </td>
+                <td>
+                    <button id="btn02" onclick="input(0,2);"></button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="btn10" onclick="input(1,0);"></button>
+                </td>
+                <td>
+                    <button id="btn11" onclick="input(1,1);"></button>
+                </td>
+                <td>
+                    <button id="btn12" onclick="input(1,2);"></button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="btn20" onclick="input(2,0);"></button>
+                </td>
+                <td>
+                    <button id="btn21" onclick="input(2,1);"></button>
+                </td>
+                <td>
+                    <button id="btn22" onclick="input(2,2);"></button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        let myArr = [["", "", ""], ["", "", ""], ["", "", ""]];
+        let turnNumber = 1;
+        let char = ""
+        function input(i, j) {
+            if (turnNumber % 2 == 0) {
+                char = "O";
+            } else {
+                char = "X"
+            }
+            myArr[i][j] = char;
+            console.log(myArr);
+            document.getElementById("btn" + i + j).innerHTML = "<span>" + char + "</span>";
+            turnNumber++;
+            let winChar = checkWin(myArr);
+            if (winChar != "") {
+                sleep(500).then(() => {
+                    alert(winChar + " won!")
+                });
+            }
+            if (turnNumber == 10) {
+                alert("Duel!")
+            }
+        }
+
+        function checkWin(arr) {
+            let winChar = "";
+            if (arr[0][0] === arr[0][1] && arr[0][1] === arr[0][2] && arr[0][0] !== "") {
+                winChar = arr[0][0];
+            } else if (arr[1][0] === arr[1][1] && arr[1][1] === arr[1][2] && arr[1][0] !== "") {
+                winChar = arr[1][0];
+                console.log(2);
+            } else if (arr[2][0] === arr[2][1] && arr[2][1] === arr[2][2] && arr[2][0] !== "") {
+                winChar = arr[2][0];
+                console.log(3);
+            } else if (arr[0][0] === arr[1][0] && arr[1][0] === arr[2][0] && arr[0][0] !== "") {
+                winChar = arr[0][0];
+                console.log(4);
+            } else if (arr[0][1] === arr[1][1] && arr[1][1] === arr[2][1] && arr[0][1] !== "") {
+                winChar = arr[0][1];
+                console.log(5);
+            } else if (arr[0][2] === arr[1][2] && arr[1][2] === arr[2][2] && arr[0][2] !== "") {
+                winChar = arr[0][2];
+                console.log(6);
+            } else if (arr[0][0] === arr[1][1] && arr[1][1] === arr[2][2] && arr[0][0] !== "") {
+                winChar = arr[0][0];
+                console.log(7);
+            } else if (arr[0][2] === arr[1][1] && arr[1][1] === arr[2][0] && arr[0][2] !== "") {
+                winchar = arr[0][2];
+                console.log(8);
+            }
+            console.log(winChar);
+            return winChar;
+        }
+        function sleep (time) {
+            return new Promise((resolve) => setTimeout(resolve, time));
+        }
+    </script>
+</body>
+
+</html>
