@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function disArr(arr) {
+            arr.join(",");
+            document.write(arr);
+        }
+
+        let nums = [];
+        for (let i = 0; i < 10; i++) {
+            nums.push(Math.floor(Math.random() * 101));
+        }
+        console.log(nums);
+
+        let reverseNums = [];
+        for (let i = nums.length - 1; i >= 0; i--) {
+            reverseNums.push(nums[i]);
+        }
+        console.log(reverseNums);
+
+        document.write("nums");
+        document.write("<br>");
+        disArr(nums);
+        document.write("<br>");
+        document.write("<br>");
+        document.write("reverseNums");
+        document.write("<br>");
+        disArr(reverseNums);
+
+    </script>
+</body>
+</html>
