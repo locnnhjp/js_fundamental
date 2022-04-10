@@ -13,6 +13,7 @@
         button {
             width: 100px;
             height: 100px;
+            font-size: 40px;
         }
     </style>
     <div>
@@ -72,8 +73,7 @@
                 sleep(500).then(() => {
                     alert(winChar + " won!")
                 });
-            }
-            if (turnNumber == 10) {
+            } else if (turnNumber >= 10) {
                 alert("Duel!")
             }
         }
@@ -84,25 +84,18 @@
                 winChar = arr[0][0];
             } else if (arr[1][0] === arr[1][1] && arr[1][1] === arr[1][2] && arr[1][0] !== "") {
                 winChar = arr[1][0];
-                console.log(2);
             } else if (arr[2][0] === arr[2][1] && arr[2][1] === arr[2][2] && arr[2][0] !== "") {
                 winChar = arr[2][0];
-                console.log(3);
             } else if (arr[0][0] === arr[1][0] && arr[1][0] === arr[2][0] && arr[0][0] !== "") {
                 winChar = arr[0][0];
-                console.log(4);
             } else if (arr[0][1] === arr[1][1] && arr[1][1] === arr[2][1] && arr[0][1] !== "") {
                 winChar = arr[0][1];
-                console.log(5);
             } else if (arr[0][2] === arr[1][2] && arr[1][2] === arr[2][2] && arr[0][2] !== "") {
                 winChar = arr[0][2];
-                console.log(6);
             } else if (arr[0][0] === arr[1][1] && arr[1][1] === arr[2][2] && arr[0][0] !== "") {
                 winChar = arr[0][0];
-                console.log(7);
             } else if (arr[0][2] === arr[1][1] && arr[1][1] === arr[2][0] && arr[0][2] !== "") {
                 winchar = arr[0][2];
-                console.log(8);
             }
             console.log(winChar);
             return winChar;
