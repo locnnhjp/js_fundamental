@@ -57,7 +57,7 @@
     <script>
         let myArr = [["", "", ""], ["", "", ""], ["", "", ""]];
         let turnNumber = 1;
-        let char = ""
+        let char;
         const MAX_TURN = 10;
         function resetGame() {
             myArr = [["", "", ""], ["", "", ""], ["", "", ""]];
@@ -75,12 +75,20 @@
             } else {
                 char = "X"
             }
+            // Phản ánh nước đi vào mảng 
             myArr[i][j] = char;
-            console.log(myArr);
+
+            // Phản ánh nước đi lên màn hình
             document.getElementById("btn" + i + j).innerHTML = "<span>" + char + "</span>";
             document.getElementById("btn" + i + j).disabled = true;
+            
+            // Tăng giá trị số lượt đã đi, sau này dùng để phán định thắng hay hoà
             turnNumber++;
+
+            // Check xem có bên nào đủ điều kiện thắng chưa?
             let winChar = checkWin(myArr);
+
+            
             if (winChar != "") {
                 sleep(100).then(() => {
                     alert(winChar + " won!");
