@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Cach 1: Dung de quy
+        function checkPalindrome1(sampleString) {
+            let stringArr = sampleString.split();
+            if (stringArr.length == 0) {
+                return true;
+            } else if (stringArr.length == 1) {
+                return true;
+            } else {
+                if (stringArr[0] == stringArr[stringArr.length - 1]) {
+                    stringArr.shift();
+                    stringArr.pop();
+                    checkPalindrome(stringArr);
+                }
+            }
+            return false;
+        }
+
+        // Cach 2: Reverse string lai de check
+        function checkPalindrome2(sampleString) {
+            let stringArr = sampleString.split("");
+            let stringArrReverse = stringArr.reverse();
+            let sampleStringReverse = stringArrReverse.join("");
+            if (sampleString == sampleStringReverse) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        let string = prompt("Input a string");
+        console.log(checkPalindrome1(string));
+        console.log(checkPalindrome2(string));
+    </script>
+</body>
+</html>
