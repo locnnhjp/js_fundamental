@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numberList = [-3, 5, 10, 3, 1, 2];
+        numberList.sort((a, b) => {
+            return a - b
+        });
+        console.log(numberList);
+        let maxNumber = numberList[numberList.length - 1];
+        alert("Max number is " + maxNumber);
+    </script>
+</body>
+</html>
