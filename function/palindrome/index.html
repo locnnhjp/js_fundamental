@@ -9,7 +9,7 @@
 <body>
     <script>
         // Cach 1: Dung de quy
-        function checkPalindrome1(sampleString) {
+        function isPalindrome1(sampleString) {
             let stringArr = sampleString.split();
             if (stringArr.length == 0) {
                 return true;
@@ -26,7 +26,7 @@
         }
 
         // Cach 2: Reverse string lai de check
-        function checkPalindrome2(sampleString) {
+        function isPalindrome2(sampleString) {
             let stringArr = sampleString.split("");
             let stringArrReverse = stringArr.reverse();
             let sampleStringReverse = stringArrReverse.join("");
@@ -37,8 +37,8 @@
             }
         }
         let string = prompt("Input a string");
-        console.log(checkPalindrome1(string));
-        console.log(checkPalindrome2(string));
+        console.log(isPalindrome1(string));
+        console.log(isPalindrome2(string));
     </script>
 </body>
 </html>
