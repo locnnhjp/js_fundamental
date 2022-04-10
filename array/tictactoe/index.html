@@ -58,6 +58,17 @@
         let myArr = [["", "", ""], ["", "", ""], ["", "", ""]];
         let turnNumber = 1;
         let char = ""
+        const MAX_TURN = 10;
+        function resetGame() {
+            myArr = [["", "", ""], ["", "", ""], ["", "", ""]];
+            turnNumber = 1;
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    document.getElementById("btn" + i + j).innerHTML = "";
+                    document.getElementById("btn" + i + j).disabled = false;
+                }
+            }
+        }
         function input(i, j) {
             if (turnNumber % 2 == 0) {
                 char = "O";
@@ -67,39 +78,52 @@
             myArr[i][j] = char;
             console.log(myArr);
             document.getElementById("btn" + i + j).innerHTML = "<span>" + char + "</span>";
+            document.getElementById("btn" + i + j).disabled = true;
             turnNumber++;
             let winChar = checkWin(myArr);
             if (winChar != "") {
-                sleep(500).then(() => {
-                    alert(winChar + " won!")
+                sleep(100).then(() => {
+                    alert(winChar + " won!");
+                    if (confirm("New game?")) {
+                        resetGame();
+                    }
                 });
-            } else if (turnNumber >= 10) {
-                alert("Duel!")
+                
+            } else if (turnNumber >= MAX_TURN) {
+                sleep(100).then(() => {
+                    alert("Duel!");
+                    if (confirm("New game?")) {
+                        resetGame();
+                    }
+                });
             }
         }
 
         function checkWin(arr) {
             let winChar = "";
-            if (arr[0][0] === arr[0][1] && arr[0][1] === arr[0][2] && arr[0][0] !== "") {
+            // Check 3 hang ngang
+            if (arr[0][0] == arr[0][1] && arr[0][1] == arr[0][2] && arr[0][0] != "") {
                 winChar = arr[0][0];
-            } else if (arr[1][0] === arr[1][1] && arr[1][1] === arr[1][2] && arr[1][0] !== "") {
+            } else if (arr[1][0] == arr[1][1] && arr[1][1] == arr[1][2] && arr[1][0] != "") {
                 winChar = arr[1][0];
-            } else if (arr[2][0] === arr[2][1] && arr[2][1] === arr[2][2] && arr[2][0] !== "") {
+            } else if (arr[2][0] == arr[2][1] && arr[2][1] == arr[2][2] && arr[2][0] != "") {
                 winChar = arr[2][0];
-            } else if (arr[0][0] === arr[1][0] && arr[1][0] === arr[2][0] && arr[0][0] !== "") {
+            // Check 3 hang doc
+            } else if (arr[0][0] == arr[1][0] && arr[1][0] == arr[2][0] && arr[0][0] != "") {
                 winChar = arr[0][0];
-            } else if (arr[0][1] === arr[1][1] && arr[1][1] === arr[2][1] && arr[0][1] !== "") {
+            } else if (arr[0][1] == arr[1][1] && arr[1][1] == arr[2][1] && arr[0][1] != "") {
                 winChar = arr[0][1];
-            } else if (arr[0][2] === arr[1][2] && arr[1][2] === arr[2][2] && arr[0][2] !== "") {
+            } else if (arr[0][2] == arr[1][2] && arr[1][2] == arr[2][2] && arr[0][2] != "") {
                 winChar = arr[0][2];
-            } else if (arr[0][0] === arr[1][1] && arr[1][1] === arr[2][2] && arr[0][0] !== "") {
+            // Check 3 duong cheo
+            } else if (arr[0][0] == arr[1][1] && arr[1][1] == arr[2][2] && arr[0][0] != "") {
                 winChar = arr[0][0];
-            } else if (arr[0][2] === arr[1][1] && arr[1][1] === arr[2][0] && arr[0][2] !== "") {
-                winchar = arr[0][2];
+            } else if (arr[0][2] == arr[1][1] && arr[1][1] == arr[2][0] && arr[0][2] != "") {
+                winChar = arr[0][2];
             }
-            console.log(winChar);
             return winChar;
         }
+
         function sleep (time) {
             return new Promise((resolve) => setTimeout(resolve, time));
         }
