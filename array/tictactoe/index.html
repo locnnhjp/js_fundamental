@@ -59,6 +59,7 @@
         let turnNumber = 1;
         let char;
         const MAX_TURN = 10;
+
         function resetGame() {
             myArr = [["", "", ""], ["", "", ""], ["", "", ""]];
             turnNumber = 1;
@@ -69,6 +70,7 @@
                 }
             }
         }
+
         function input(i, j) {
             if (turnNumber % 2 == 0) {
                 char = "O";
@@ -88,7 +90,7 @@
             // Check xem có bên nào đủ điều kiện thắng chưa?
             let winChar = checkWin(myArr);
 
-            
+
             if (winChar != "") {
                 sleep(100).then(() => {
                     alert(winChar + " won!");
