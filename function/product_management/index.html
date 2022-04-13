@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo&display=swap');
+        * {
+            font-family: 'Exo', sans-serif;
+        }
+        table {
+            border-collapse: collapse;
+            
+        }
+
+        table, th, td {
+            border: 2px solid white;
+        }
+
+        th, td {
+            padding: 10px;
+        }
+
+        th {
+            background-color: darkblue;
+            color: white;
+        }
+        .edit-btn {
+            background-color: cornflowerblue;
+            color: white;
+            padding: 5px 20px;
+        }
+
+        .del-btn {
+            background-color: crimson;
+            color: white;
+            padding: 5px 10px;
+        }
+
+        .add-btn {
+            background-color: cadetblue;
+            color: white;
+            padding: 5px 30px;
+        }
+
+        #new-product {
+            padding: 5px 10px;
+            width: 350px;
+        }
+
+        button {
+            border-radius: 5px;
+            margin: 0 20px;
+        }
+
+        tr:nth-child(even) {
+            background-color: ghostwhite;
+        }
+
+        .prd-name-col {
+            width: 700px;
+        }
+
+        button:hover {
+            cursor: pointer;
+            color: burlywood;
+        }
+    </style>
+    <h1>Add New Product</h1>
+    <form action="#">
+        <input type="text" placeholder="New Product" id="new-product">
+        <button class="add-btn" id="add-prd-btn" onclick="addNewProduct();">Add</button>
+    </form>
+    <h1>Display All Products</h1>
+    <table id="product-list">
+    </table>
+    
+    <script>
+        let productList = ["Beer", "Cocacola", "Pepsi", "Mirinda"];
+        showProducts();
+
+        function addNewProduct() {
+            let productName = document.getElementById("new-product").value;
+            document.getElementById("new-product").value = "";
+            console.log(productName);
+            if (productName != "") {
+                productList.push(productName);
+                console.log(productList);
+                showProducts();
+            } else {
+                alert("Vui long nhap ten san pham");
+            }
+        }
+
+        function editProduct(index) {
+            let productName = prompt("Nhap ten san pham muon thay doi", productList[index]);
+            productList[index] = productName;
+            showProducts();
+        }
+
+        function deleteProduct(index) {
+            let delConfirm = confirm("Ban co chac chan la muon xoa san pham nay?");
+            if (delConfirm) {
+                productList.splice(index, 1);
+                showProducts();
+            }
+        }
+
+        function showProducts() {
+            let result = "<tr>" + 
+                "<th>No.</th>" +
+                "<th class=\"prd-name-col\">Product Name</th>" + 
+                "<th colspan=\"2\">" + productList.length + " products</th>" +
+                "</tr>";
+            for (let i = 0; i < productList.length; i++) {
+                result = result + 
+                    "<tr>" +
+                    "<td>" + (i + 1) + "</td>" +
+                    "<td>" + productList[i] + "</td>" + 
+                    "<td><button class=\"edit-btn\" onclick=editProduct(" + i + ");>Edit</button></td>" +
+                    "<td><button class=\"del-btn\" onclick=deleteProduct(" + i + ");>Delete</button></td>" +
+                    "</tr>";
+            }
+            document.getElementById("product-list").innerHTML = result;
+        }
+    </script>
+</body>
+</html>
