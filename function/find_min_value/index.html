@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function findMin(arr) {
+            if (arr.length == 0) {
+                return "Empty array!!!";
+            }
+            arr.sort((a, b) => {
+                return a - b;
+            });
+            return arr[0];
+        }
+
+        // demo findMin function
+        let arr1 = [];
+        let arr2 = [1, 2, 3, 4, 5];
+        let arr3 = [4, 6, 2, 1, 0];
+        console.log(findMin(arr1));
+        console.log(findMin(arr2));
+        console.log(findMin(arr3));
+    </script>
+</body>
+
+</html>
