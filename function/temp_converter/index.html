@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <h1>Temperature Converter</h1>
+    <form action="#">
+        Fahrenheit: <input type="number" id="f-temp" onchange="convertToCelcius(this.value);"
+            oninput="convertToCelcius(this.value);">
+        <div>
+            Celcius: <span id="c-temp"></span>
+        </div>
+    </form>
+    <script>
+        function convertToCelcius(temperature) {
+            let celciusTemp = (temperature - 32) / 1.8
+            document.getElementById("c-temp").innerText = celciusTemp;
+        }
+    </script>
 </body>
+
 </html>
