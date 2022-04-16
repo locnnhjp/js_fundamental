@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function findMin(number1, number2, number3) {
+            let tempArray = [number1, number2, number3];
+            tempArray.sort((a, b) => {
+                return a - b;
+            })
+            return tempArray[0];
+        }
+        let number1 = parseInt(prompt("Nhap so thu nhat"));
+        let number2 = parseInt(prompt("Nhap so thu hai"));
+        let number3 = parseInt(prompt("Nhap so thu ba"));
+        document.write("So nho nhat la " + findMin(number1, number2, number3));
+
+    </script>
+</body>
+</html>

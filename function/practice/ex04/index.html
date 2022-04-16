@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function calPerimeter(radius) {
+            return radius * 2 * Math.PI;
+        }
+
+        function calArea(radius) {
+            return radius * radius * Math.PI;
+        }
+
+        for (let i = 0; i <= 100; i++) {
+            let perimeter = calPerimeter(i);
+            let area = calArea(i);
+            document.write("Ban kinh: " + i + ", Chu vi: " + perimeter + ", Dien tich: " + area);
+            document.write("<br>");
+        }
+    </script>
+</body>
+
+</html>
