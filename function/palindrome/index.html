@@ -10,16 +10,14 @@
     <script>
         // Cach 1: Dung de quy
         function isPalindrome1(sampleString) {
-            let stringArr = sampleString.split();
-            if (stringArr.length == 0) {
-                return true;
-            } else if (stringArr.length == 1) {
+            if (sampleString.length < 2) {
                 return true;
             } else {
+                let stringArr = sampleString.split('');
                 if (stringArr[0] == stringArr[stringArr.length - 1]) {
                     stringArr.shift();
                     stringArr.pop();
-                    checkPalindrome(stringArr);
+                    return isPalindrome1(stringArr.join(""));
                 }
             }
             return false;
@@ -30,11 +28,7 @@
             let stringArr = sampleString.split("");
             let stringArrReverse = stringArr.reverse();
             let sampleStringReverse = stringArrReverse.join("");
-            if (sampleString == sampleStringReverse) {
-                return true;
-            } else {
-                return false;
-            }
+            return sampleString == sampleStringReverse;
         }
         let string = prompt("Input a string");
         console.log(isPalindrome1(string));

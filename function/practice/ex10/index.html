@@ -15,16 +15,13 @@
                     numOfAppear++;
                 }
             }
-
             if (numOfAppear == 0) {
                 return -1;
             }
             return numOfAppear;
-
         }
 
         let array = prompt("Nhap day ky tu (ngan cach bang dau ,)").split(",");
-        console.log(array);
         let char = prompt("Nhap ky tu can tim");
         document.write(solution(array, char));
     </script>

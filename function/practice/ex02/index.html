@@ -12,7 +12,6 @@
 
     <script>
         const EMPTY_STRING = "";
-        let starName = prompt("Nhap vao ten ngoi sao");
         let stars = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
         let starSigns = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
 
@@ -24,7 +23,8 @@
             }
             return EMPTY_STRING;
         }
-
+        
+        let starName = prompt("Nhap vao ten ngoi sao");
         let foundStar = findStar(starName);
         if (foundStar != EMPTY_STRING) {
             document.write("Chom sao cua " + starName + " la " + foundStar);

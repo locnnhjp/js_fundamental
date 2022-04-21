@@ -8,9 +8,15 @@
 </head>
 <body>
     <script>
-        function checkIsPositive(number) {
+        function isPositiveInt(number) {
             return number % 1 == 0 && number > 0;
         }
-    </script>
+
+        console.log(isPositiveInt(1)); //true
+        console.log(isPositiveInt(1.5)); //false
+        console.log(isPositiveInt(0)); //false
+        console.log(isPositiveInt(-1)); //false
+        console.log(isPositiveInt(-1.5)); //false
+        </script>
 </body>
 </html>
