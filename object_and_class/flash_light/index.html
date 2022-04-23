@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Battery {
+            constructor() {
+                this.energy = 0;
+            }
+
+            setEnergy(energy) {
+                this.energy = energy;
+            }
+
+            getEnergy() {
+                return this.energy;
+            }
+
+            decreaseEnergy() {
+                if (this.energy > 0) {
+                    this.energy--;
+                }
+            }
+        }
+
+        class FlashLamb {
+            constructor() {
+                this.status = false;
+            }
+            setBattery(battery) {
+                this.battery = battery;
+            }
+
+            getBatteryInfo() {
+                return this.battery.getEnergy();
+            }
+
+            light() {
+                if(this.status) {
+                    alert("Lighting!");
+                } else {
+                    alert("Not Lighting!");
+                }
+            }
+
+            turnOn() {
+                if (this.getBatteryInfo() > 0) {
+                    this.status = true;
+                } else {
+                    this.status = false;
+                }
+            }
+            
+            turnOff() {
+                this.status = false;
+            }
+        }
+
+        let battery = new Battery();
+        battery.setEnergy(10);
+
+        let flashLamb = new FlashLamb();
+        flashLamb.setBattery(battery);
+
+        document.write("Battery info: " + flashLamb.getBatteryInfo() + "<br>");
+        flashLamb.light();
+
+        document.write("Turn on<br>");
+        flashLamb.turnOn();
+        flashLamb.light();
+        document.write("Battery info: " + flashLamb.getBatteryInfo() + "<br>");
+
+        document.write("Turn off<br>");
+        flashLamb.turnOff();
+        flashLamb.light();
+
+
+        
+
+    </script>
+</body>
+</html>
