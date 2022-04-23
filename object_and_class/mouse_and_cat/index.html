@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Animal {
+            constructor(name, weight, speed, aliveStatus) {
+                this.name = name;
+                this.weight = weight;
+                this.speed = speed;
+                this.aliveStatus = aliveStatus;
+            }
+
+            setName(name) {
+                this.name = name;
+            }
+
+            getName() {
+                return this.name;
+            }
+
+            setWeight(weight) {
+                this.weight = weight;
+            }
+
+            getWeight() {
+                return this.weight;
+            }
+
+            setSpeed(speed) {
+                this.speed = speed;
+            }
+
+            getSpeed() {
+                return this.speed;
+            }
+
+            setAliveStatus(aliveStatus) {
+                this.aliveStatus = aliveStatus;
+            }
+
+            isAlive() {
+                return this.aliveStatus;
+            }
+        }
+
+        class Mouse extends Animal {
+            squeak() {
+                if (this.isAlive()) {
+                    alert(this.name + ": Chit Chit!");
+                } else {
+                    alert(this.name + " is dead so he can not squeak!");
+                }
+            }
+        }
+        class Cat extends Animal {
+            meow() {
+                if (this.isAlive()) {
+                    alert(this.name + ": Meow Meow!");
+                } else {
+                    alert(this.name + "  is dead so he cannnot meow");
+                }
+                
+            }
+
+            catchMouse(mouse) {
+                alert(this.name + " try to catch " + mouse.name + "!");
+                if (this.getSpeed() > mouse.getSpeed()) {
+                    alert(this.name + " catched " + mouse.name) + "!";
+                    this.eatMouse(mouse);
+                } else {
+                    alert(this.name + " can not catch " + mouse.name + "!");
+                }
+            }
+
+            eatMouse(mouse) {
+                if (mouse.isAlive()) {
+                    alert("BEFORE: " + this.name + "'s weight is " + this.weight)
+                    alert(this.name + " ate " + mouse.name + "!");
+                    this.weight += mouse.getWeight();
+                    alert("AFTER: " + this.name + "'s weight is " + this.weight)
+                } else {
+                    alert(mouse.name + " is dead so " + this.name + " can not eat him!");
+                }
+            }
+        }
+
+        let mouse1 = new Mouse("Jerry1", 10, 10, true);
+        let mouse2 = new Mouse("Jerry2", 10, 20, true);
+        let mouse3 = new Mouse("Jerry3", 10, 10, false);
+        let mouse4 = new Mouse("Jerry4", 20, 5, true);
+        let cat = new Cat("Tom", 20, 15, true);
+
+        alert("Start!");
+        mouse1.squeak();
+        mouse2.squeak();
+        mouse3.squeak();
+        mouse4.squeak();
+        cat.meow();
+        cat.catchMouse(mouse1);
+        cat.catchMouse(mouse2);
+        cat.catchMouse(mouse3);
+        cat.catchMouse(mouse4);
+        alert("End!");
+    </script>
+</body>
+
+</html>
