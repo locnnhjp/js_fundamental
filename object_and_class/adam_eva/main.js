@@ -26,10 +26,6 @@ class Human {
 
     }
 
-    isMale() {
-        return this.gender.toLowerCase() == "male";
-    }
-
     setGender(gender) {
         this.gender = gender;
     }
@@ -70,20 +66,20 @@ alert("Create apple!");
 let apple = new Apple();
 alert("Apple was created!");
 
-let adam = new Human("Adam", "male", 80);
-let eva = new Human("Eva", "female", 50);
+let adam = new Human("David", "male", 80);
+let eva = new Human("Victoria", "female", 50);
 
-adam.say("I am Adam");
-eva.say("I am Eva");
+adam.say("I am " + adam.getName());
+eva.say("I am " + eva.getName());
 
 while(!apple.isEmpty()) {
-    alert("Adam eat apple!");
+    alert(adam.getName() + " eat apple!");
     adam.eat(apple);
-    alert("Adam weight is " + adam.getWeight());
+    alert(adam.getName() + " weight is " + adam.getWeight());
 
-    alert("Eva eat apple!");
+    alert(eva.getName() + " eat apple!");
     eva.eat(apple);
-    alert("Eva weigh is " + eva.getWeight());
+    alert(eva.getName() + " weight is " + eva.getWeight());
 
     alert("Apple weight is " + apple.getWeight());
 }

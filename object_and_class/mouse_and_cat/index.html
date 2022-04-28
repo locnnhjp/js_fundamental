@@ -65,14 +65,14 @@
                 if (this.isAlive()) {
                     alert(this.name + ": Meow Meow!");
                 } else {
-                    alert(this.name + "  is dead so he cannnot meow");
+                    alert(this.name + "  is dead so he can not meow");
                 }
                 
             }
 
             catchMouse(mouse) {
                 alert(this.name + " try to catch " + mouse.name + "!");
-                if (this.getSpeed() > mouse.getSpeed()) {
+                if (this.getSpeed() >= mouse.getSpeed()) {
                     alert(this.name + " catched " + mouse.name) + "!";
                     this.eatMouse(mouse);
                 } else {

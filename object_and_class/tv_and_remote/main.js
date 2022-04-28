@@ -2,6 +2,7 @@ class Remote {
     constructor(tivi) {
         this.tivi = tivi;
     }
+    
     setChannel(channel) {
         this.tivi.setChannel(channel);
     }
