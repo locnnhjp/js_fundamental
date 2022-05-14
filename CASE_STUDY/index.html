@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TYPING GAME</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <button id="settings-btn" class="settings-btn">
+        Setting
+    </button>
+    <div id="settings" class="settings hide">
+        <form id="settings-form">
+            <div>
+                <label for="difficulty">Difficulty</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+        </form>
+    </div>
+
+    <div class="container">
+        <h2>Typing Game</h2>
+        <small>Type the following:</small>
+
+        <h1 id="word">Sample world</h1>
+
+        <input type="text" id="text" autocomplete="off" placeholder="Type the word here...">
+
+        <p class="time-container">
+            Time left: <span id="time">10s</span>
+        </p>
+
+        <p class="score-container">
+            Score: <span id="score">0</span>
+        </p>
+
+        <div id="end-game-container" class="end-game-container">
+            <h1>Time ran out!</h1>
+            <p>Your final score is <span id="final-score"></span></p>
+            <button onclick="location.reload();">Reload</button>
+        </div>
+
+    </div>
+
+    <audio id="audio" controls style="display:none">
+        <source src="./notice.m4a" type="audio/mpeg"> Your browser does not support the audio element.
+      </audio>
+    <script src="main.js"></script>
+</body>
+</html>
